@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project {{ post.id }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <div class="container-detail">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="image_detail">
+        <div>
+            <p class="description">{{ post.description }}</p>
+        </div>
+    </div>
+</body>
+</html>

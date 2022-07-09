@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-color:#000;
+    font-family: 'Albert Sans', sans-serif;
+    overflow:overlay;
+}
+::-webkit-scrollbar{
+    width:6px;
+    height:20px;
+
+}
+::-webkit-scrollbar-thumb{
+    background-color:#fff;
+    border-radius:5px;
+    height:20px;
+}
+::-webkit-scrollbar-track{
+    background-color:transparent;
+}
+h1{
+    text-align:center;
+    font-size:4rem;
+    color:#fcf631;
+}
+.container-home{
+    width:100%;
+    height:100vh;
+    background-image:url('/static/img/cielo.jpg');
+    background-attachment:fixed;
+    color:#fff;
+    display:grid;
+    grid-template-columns:70% 30%;
+    grid-template-rows:auto;
+    overflow:hidden;
+}
+.text-home{
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+}
+.menu-home{
+    background-color:#FCF631;
+    height:70%;
+    padding: 30% 10%;
+}
+.link-home{
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    font-size:2.8rem;
+    background-image: linear-gradient(#222, #222);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    overflow:hidden;
+}
+.link-home:hover, .link-home:focus {
+    background-size: 100% 2px;
+}
+.text-dark-home,.text-yellow-home{
+    font-size:5rem;
+    font-weight:bold;
+    color:#fff;
+}
+.text-yellow-home{
+    font-size:4.5rem;
+    color:#fcf631;
+}
+.scroll-home{
+    font-size:1.5rem;
+    position:absolute;
+    top:90%;
+    transform:rotate(-90deg);
+    animation:scroll 1s ease infinite;
+}
+@keyframes scroll{
+    0,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-100px);
+    }
+}
+.about-container{
+    width:100%;
+    height:100vh;
+    padding:5%;
+    color:#fff;
+}
+.text-about{
+    text-align:justify;
+}
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+.container-languajes{
+    width:100%;
+    height:auto;
+}
+.swiper-slide{
+    display:grid;
+    place-items:center;
+}
+.swiper-pagination,.swiper-button-prev,.swiper-button-next{
+    color:#FCF631 !important;
+}
+.swiper-pagination-bullet{
+    background-color:#fff !important;
+}
+.swiper-pagination-bullet-active{
+    background-color:#fcf631 !important;
+}
+.button-contact{
+    padding:20px;
+    width:100%;
+    border-radius:10px;
+    font-size:1.5rem;
+    text-align:center;
+    font-weight:bold;
+    background-color:#fcf631;
+    color:#222;
+    cursor:pointer;
+    transition-duration:.5s;
+}
+.button-contact:hover{
+    transition-duration:.5s;
+    background-color:#D5D02A;
+}
+.container-projects{
+    width:100%;
+    height:100vh;
+    background-color:#000;
+    padding:5%;
+    display:grid;
+    grid-template-columns:auto auto auto;
+    column-gap:20px;
+}
+.text-projects{
+    color:#222;
+    text-align:center;
+    font-size:4rem;
+    font-weight:bold;
+}
+.container-project{
+    background-color:#111;
+    border-radius:10px;
+    padding:20px;
+    display:block;
+    height:500px;
+}
+.project-card-title{
+    text-align:center;
+    color:#fcf631;
+}
+.image{
+    width:100%;
+    height:300px;
+    margin:10px 0;
+    border-radius:10px;
+}
+.link{
+    text-decoration:none;
+    background-color:#fff;
+    border-radius:5px;
+    padding:5px 10px;
+    color:#222;
+}
+.details-btn{
+    padding:5px 20px;
+    color:#222;
+    text-decoration:none;
+    background-color:#fcf631;
+    border-radius:5px;
+    width:100%;
+}
+.container-detail{
+    width:100%;
+    height:85vh;
+    padding:20px;
+    display:grid;
+    grid-template-columns:60% auto;
+    column-gap:30px;
+}
+.image_detail{
+    width:100%;
+    height:500px;
+}
+.description{
+    color:#fff;
+    font-size:1.5rem;
+}

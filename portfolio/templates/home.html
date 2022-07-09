@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio John Gualteros</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+</head>
+<body>
+    {% include 'partials/__welcome.html' %}
+
+    <div class="about-container" id="about" data-aos="fade-up-right">
+        <h1>About Me</h1>
+        <p class="text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi, consectetur dolore ducimus esse, eveniet explicabo ipsam libero maxime placeat possimus, quasi voluptatum. Aliquam animi aspernatur blanditiis delectus eos incidunt, itaque odio odit porro quidem, saepe sapiente temporibus vero! Accusamus culpa distinctio doloremque enim et fuga magni, maiores obcaecati pariatur repellendus suscipit tempora. Accusantium aperiam aspernatur at atque aut consequatur, debitis dignissimos doloremque dolores id ipsum labore libero minima, nam nostrum quia quibusdam, quod quos sequi sint tempora ullam vitae? Ad aliquid architecto, illo, incidunt ipsa ipsam iusto maxime, molestias non placeat totam ullam veniam vero. Explicabo reiciendis sed voluptatibus? Alias aperiam commodi consequatur cumque cupiditate deleniti ducimus eius enim eveniet excepturi, id ipsam ipsum laboriosam mollitia natus odio odit officiis porro possimus quaerat rem rerum, sapiente soluta tempora, tenetur unde velit! Ea natus placeat temporibus ullam! Amet at beatae culpa dignissimos doloremque eaque facilis, fugit, illum iste minima mollitia officiis omnis pariatur quo quod rem saepe sunt tempora. Amet commodi mollitia perferendis perspiciatis vero? Adipisci animi aut consequuntur, debitis distinctio dolor doloribus laudantium magnam omnis possimus quas quasi quidem repudiandae. Amet assumenda atque illum ipsa non pariatur quisquam, sequi unde velit veniam. Adipisci animi, consequuntur debitis deserunt dicta dolor dolore esse est impedit ipsam nisi nulla optio placeat quaerat repellat similique sit, voluptate! Aliquam at autem consequuntur dignissimos ea enim fuga fugit, illum laborum magni nihil numquam placeat quaerat quisquam sit velit vitae? A accusamus alias aliquid, animi consequatur, cum dignissimos distinctio dolorem dolores eligendi eos eveniet ex facilis fuga fugiat harum id in itaque iusto laboriosam laborum maxime modi mollitia nostrum nulla obcaecati pariatur quia quisquam quo reiciendis sequi sit soluta suscipit temporibus vel veniam vitae. Alias aliquam, consequatur corporis deserunt eligendi eos est excepturi id incidunt inventore labore non officiis pariatur quaerat repellat similique sint voluptatem. Doloribus.</p>
+        <div class="container-languajes">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png"
+                         alt="Html Logo"
+                        width="150">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+                         alt="Css Logo"
+                        width="130">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                         alt="Javascript Logo"
+                        width="130">
+                </div>
+                  <div class="swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png"
+                         alt="Bootstrap Logo"
+                        width="130">
+                </div>
+                  <div class="swiper-slide">
+                    <img src="https://1000marcas.net/wp-content/uploads/2020/11/Java-logo.png"
+                         alt="Java Logo"
+                        width="130">
+                </div>
+                  <div class="swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png"
+                         alt="Python Logo"
+                        width="130">
+                </div>
+                  <div class="swiper-slide">
+                    <img src="https://1000marcas.net/wp-content/uploads/2021/06/Django-Logo.png"
+                         alt="Django Logo"
+                        width="130">
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-projects">
+        {% for post in posts %}
+            <div class="container-project" data-aos="fade-up" data-aos-duration="3000">
+                <h2 class="project-card-title">{{ post.title }}</h2>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="image">
+                <a href="{{ post.url }}" target="_blank" class="link">Go To The Code</a>
+                <a href="{% url 'detail' post.id %}" class="details-btn">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+    </script>
+</body>
+</html>
